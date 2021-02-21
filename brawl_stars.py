@@ -12,25 +12,6 @@ driver = webdriver.Chrome(options=options)
 
 driver.get('https://brawltime.ninja/tier-list/map')
 
-for _ in range(2):
-    os.system('cls')
-    print('\ncollecting data\n')
-    time.sleep(.5)
-    os.system('cls')
-    print('\ncollecting data.\n')
-    time.sleep(.5)
-    os.system('cls')
-    print('\ncollecting data..\n')
-    time.sleep(.5)
-    os.system('cls')
-    print('\ncollecting data...\n')
-    time.sleep(.5)
-    os.system('cls')
-    print('\ncollecting data....\n')
-    time.sleep(.5)
-    os.system('cls')
-os.system('cls')
-
 html = driver.page_source
 driver.close()
 
@@ -60,7 +41,8 @@ for games in livegames:
             brawler.find('a', href=True, text=True)
             game_brawlers.append(str(brawler['href']).replace('/tier-list/brawler/', '').replace('_', ' ').title())
         allbrawlers.append(game_brawlers)
-
+    
+    os.system('cls')
     for mode in range(len(gamemodes)):
         print(gamemodes[mode])
         for a in range(len(allbrawlers[mode])):
